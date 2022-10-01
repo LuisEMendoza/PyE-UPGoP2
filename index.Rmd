@@ -6,7 +6,7 @@ output: html_document
 ## Probabilidad y Estadística
 
 ```{r, out.width='25%', fig.align='center', fig.cap='logo', echo = FALSE}
-knitr::include_graphics('images/logo.png')
+knitr::include_graphics("images/logo.png")
 ```
 
 **Objetivo de la asignatura.** El alumno será capaz de manejar las técnicas de estadística descriptiva e inferencial para organizar, representar y analizar datos obtenidos de situación simulada y/o real.
