@@ -8,6 +8,15 @@ output:
 
 ## Observaciones y variables
 
-En Estadística manejamos el concepto de *observaciones* y **variables** como los valores que pueden tomar las características que estamos analizando. Por ejemplo, supongamos que estamos midiendo la estatura de 25 estudiantes que pertenecen a un grupo de cuarto cuatrimestre: la variable es la característica "estatura" y las observaciones se corresponden con cada una de las 25 mediciones obtenidas. 
+En Estadística manejamos el concepto de **observaciones** y **variables** como los valores que pueden tomar las características que estamos analizando. Por ejemplo, supongamos que estamos midiendo la estatura de 25 estudiantes que pertenecen a un grupo de cuarto cuatrimestre: la variable es la característica "estatura" y tendremos 25 observaciones, ya que se corresponden con cada una de las 25 mediciones obtenidas. 
 
-Es importante mencionar que en cuanto a las variables, existen un par de tipos de ellas: **cualitativas** (nominales y ordinales) y **cuantitativas** (numéricas). Entre las nominales reconocemos valores compuestos únicamente por nombres o etiquetas, es decir, solo palabras; por otro lado, las ordinales aceptan números, pero solo como datos ordenados de menor a mayor en cuanto a jerarquía. Entre las ordinales tenemos números como _primero_ o _segundo_. Son números, pero no tiene sentido realizar operaciones con estos (sumar el primero con el tercer lugar no es coherente).
+Es importante mencionar que en cuanto a las variables, existen un par de tipos de ellas: **cualitativas** (nominales y ordinales) y **cuantitativas** (numéricas). Entre las nominales reconocemos valores compuestos únicamente por nombres o etiquetas, es decir, solo palabras; por otro lado, las ordinales aceptan números, pero solo como datos ordenados de menor a mayor en cuanto a jerarquía. Entre las ordinales tenemos números como *primero* o *segundo*. Son números, pero no tiene sentido realizar operaciones con estos (sumar el primero con el tercer lugar no es coherente). Por último, las variables numéricas son eso, números que pueden repetirse más o menos, pero que sí se pueden realizar operaciones matemáticas con ellos.
+
+## Resúmenes estadísticos
+
+Estudiaremos tres formas de resumir los datos: tabular, gráfica y numérica. La forma tabular consiste en ordenar y organizar los datos en forma de tabla, tomando como referencia las frecuencias de aparición de cada observación; la forma gráfica implica construir un diagrama a partir de la tabla previamente elaborada y por último, el resumen numérico requiere que se hagan ciertos cálculos que incluyan todas las observaciones. Como cabe esperarse, la última solo se aplica a variables cuantitativas, por lo tanto, la dejaremos para el final. 
+
+### Resumen tabular nominal
+
+Para mostrar cómo elaborar un resumen tabular comenzaremos trabajando con variables nominales (aplica lo mismo para ordinales). Tomemos el conjunto de datos que se encuentra en el siguiente [enlace](https://docs.google.com/spreadsheets/d/1aNo_5-bE7Y3T9lAc0wwYZi0rVYFjHm7DJyQRpmMA8JM/edit?usp=sharing)
+
