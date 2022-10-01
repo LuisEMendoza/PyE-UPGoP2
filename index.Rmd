@@ -1,7 +1,5 @@
 ---
 title: "index"
-author: "Luis Enrique Mendoza Ruiz"
-date: "2022-10-01"
 output: html_document
 ---
 

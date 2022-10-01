@@ -1,12 +1,36 @@
-name: "cars"
+name: "Probabilidad y Estadística"
 output_dir: "docs"
 navbar:
-  title: "Cars"
+  title: "Probabilidad y Estadística"
   left:
-  - text: "Home"
+  - text: "Inicio"
     href: index.html
-  - text: "Speed and Distance"
-    href: speed-and-distance.html
+  - text: "Contenido"
+    menu:
+      - text: "Unidades"
+      - text: "Unidad 1"
+        href: U1.html
+      - text: "Unidad 2"
+        href: U2.html
+      - text: "Unidad 3"
+        href: U3.html
+      - text: "Unidad 4"
+        href: U4.html
+      - text: "Unidad 5"
+        href: U5.html
+  - text: "Evidencias"
+    menu:
+      - text: "Unidades"
+      - text: "Unidad 1"
+        href: U1.html
+      - text: "Unidad 2"
+        href: U2.html
+      - text: "Unidad 3"
+        href: U3.html
+      - text: "Unidad 4"
+        href: U4.html
+      - text: "Unidad 5"
+        href: U5.html
 output:
   html_document:
     theme: cosmo
