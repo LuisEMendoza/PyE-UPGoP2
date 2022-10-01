@@ -1,28 +1,21 @@
 ---
-title: "index"
+title: "Encuadre"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```
+{r, out.width='25%', fig.align='center', fig.cap='logo'}
+knitr::include_graphics('source_images/logo.jpg')
 ```
 
-## R Markdown
+## Probabilidad y Estadística
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+**Objetivo de la asignatura.** El alumno será capaz de manejar las técnicas de estadística descriptiva e inferencial para organizar, representar y analizar datos obtenidos de situación simulada y/o real.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+### Contenido
 
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+1. Estadística Descriptiva.
+2. Elementos de probabilidad.
+3. Variables aleatorias discretas y continuas.
+4. Pruebas de hipótesis.
+5. Estimación de parámetros.
