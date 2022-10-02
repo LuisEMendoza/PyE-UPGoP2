@@ -44,13 +44,13 @@ Toca ahora que procedamos con el conteo de cuántas veces se repite cada marca. 
 =UNIQUE(B2:B51)
 ```
 
-```{r, out.width='50%', fig.align='center', echo = FALSE}
+```{r, out.width='100%', fig.align='center', echo = FALSE}
 knitr::include_graphics("images/GoogleSheets002.png")
 ```
 
 Al dar *Enter* nos devolverá los resultados en tantas celdas como sea necesario, siendo las categorías mostradas a continuación:
 
-```{r, out.width='50%', fig.align='center', echo = FALSE}
+```{r, out.width='100%', fig.align='center', echo = FALSE}
 knitr::include_graphics("images/GoogleSheets003.png")
 ```
 
@@ -60,13 +60,13 @@ Crearemos los siguientes encabezados para tener listas todas las columnas de una
 =CONTAR.SI(B2:B51,D2:D6)
 ```
 
-```{r, out.width='50%', fig.align='center', echo = FALSE}
+```{r, out.width='100%', fig.align='center', echo = FALSE}
 knitr::include_graphics(path = "images/GoogleSheets004.png")
 ```
 
 *Sheets* nos sugerirá que le permitamos autocompletar la fórmula, aceptando el mensaje aparecido. Así tendremos ya nuestra frecuencia absoluta.
 
-```{r, out.width='50%', fig.align='center', echo = FALSE}
+```{r, out.width='100%', fig.align='center', echo = FALSE}
 knitr::include_graphics("images/GoogleSheets005.png")
 ```
 
@@ -81,7 +81,7 @@ La frecuencia absoluta acumulada se calcula como sigue.
 
 En esta ocasión rechazamos la sugerencia de *Sheets* y obtendremos el acumulado de las primeras dos categorías: 26. El siguiente paso implica posar el cursor en el pequeño cuadrado que se encuentra en la parte inferior derecha de la celda, hasta que cambie a una cruz de brazos delgados. Cuando esto pase, toca dar clic en dicho cuadrado y sin soltarlo, arrastrar hasta la celda *F6*.
 
-```{r, out.width='50%', fig.align='center', echo = FALSE}
+```{r, out.width='100%', fig.align='center', echo = FALSE}
 knitr::include_graphics("images/GoogleSheets006.png")
 ```
 
@@ -93,7 +93,7 @@ Pongamos atención en la celda *F6*. Nos indica la totalidad de observaciones (5
 
 La frecuencia relativa es un porcentaje que calculamos dividiendo la frecuencia absoluta entre el número de observaciones. Aceptamos la sugerencia de *Sheets* y tendremos ya completa la columna. 
 
-```{r, out.width='50%', fig.align='center', echo = FALSE}
+```{r, out.width='100%', fig.align='center', echo = FALSE}
 knitr::include_graphics(path = "images/GoogleSheets007.png")
 ```
 
@@ -103,13 +103,13 @@ Finalicemos la tabla colocándonos en la celda *H2* y copiando la frecuencia rel
 =H2+G3
 ```
 
-```{r, out.width='50%', fig.align='center', echo = FALSE}
+```{r, out.width='100%', fig.align='center', echo = FALSE}
 knitr::include_graphics("images/GoogleSheets008.png")
 ```
 
 De nuevo rechazamos la sugerencia y aplicamos el mismo procedimiento de arrastrar la fórmula mediante el cuadrado inferior y obtendremos el acumulado total, que será de 1. Hemos terminado la **tabla de frecuencias**. 
 
-```{r, out.width='50%', fig.align='center', echo = FALSE}
+```{r, out.width='100%', fig.align='center', echo = FALSE}
 knitr::include_graphics("images/GoogleSheets009.png")
 ```
 
