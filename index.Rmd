@@ -13,8 +13,8 @@ knitr::include_graphics("images/logo.png")
 
 ### Contenido
 
-1. Estadística Descriptiva.
-2. Elementos de probabilidad.
-3. Variables aleatorias discretas y continuas.
-4. Pruebas de hipótesis.
-5. Estimación de parámetros.
+1. **Estadística Descriptiva**
+2. **Elementos de probabilidad**
+3. **Variables aleatorias discretas y continuas**
+4. **Pruebas de hipótesis**
+5. **Estimación de parámetros**
