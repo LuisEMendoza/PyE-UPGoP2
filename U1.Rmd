@@ -130,6 +130,25 @@ Con esto hemos cargado los datos en RStudio. Si deseamos acceder a una vista pre
 head(refrescos)
 ```
 
+Para poder crear la tabla de frecuencias, tecleamos la siguiente línea de código:
+
+```{r}
+frec <- table(refrescos$REFRESCOS.FAVORITOS)
+```
+
+Y para poder mostrarla en pantalla:
+
+```{r}
+frec
+```
+Para obtener la frecuencia relativa, partiremos de la absoluta, para lo cual ejecutamos lo siguiente:
+
+```{r}
+frecrel <- prop.table(frec)
+frecrel
+```
+
+Podemos reconocer que la Coca Cola es el refresco más preferido por nuestros encuestados, acumulando el 36% de los mismos.
 
 ### Resumen gráfico nominal
 
@@ -137,7 +156,7 @@ Contrario a la costumbre popular, el gráfico recomendado solo para datos nomina
 
 #### Gráfico circular en Google Sheets
 
-Procedamos a construir un diagrama circular utilizando primero *Google Sheets*. Partamos de los [datos](https://docs.google.com/spreadsheets/d/1aNo_5-bE7Y3T9lAc0wwYZi0rVYFjHm7DJyQRpmMA8JM/edit?usp=sharing) de las marcas de refrescos que ya utilizamos en el apartado de la tabla de frecuencias. Recordemos que debemos crear una copia si ya contamos con cuenta *gmail* o descargarlos para poder utilizarlos en cualquier aplicación de hoja de cálculo.
+Procedamos a construir un diagrama circular utilizando *Google Sheets*. Partamos de los [datos](https://docs.google.com/spreadsheets/d/1aNo_5-bE7Y3T9lAc0wwYZi0rVYFjHm7DJyQRpmMA8JM/edit?usp=sharing) de las marcas de refrescos que ya utilizamos en el apartado de la tabla de frecuencias. Recordemos que debemos crear una copia si ya contamos con cuenta *gmail* o descargarlos para poder utilizarlos en cualquier aplicación de hoja de cálculo.
 
 Seleccionamos todos las celdas que contienen datos en la columna *B*, ya sea mediante el ratón o bien, nos ubicamos en la celda *B1* y presionamos la combinación de teclas *Ctrl + Shift + Flecha Abajo*. Enseguida nos dirigimos al menú `Insertar -> Gráfico` y nos aparecerá en automático el gráfico de pastel. En caso de que no, debemos asegurarnos de que el panel que aparecerá a la izquierda tiene las siguientes opciones seleccionadas:
 
@@ -152,3 +171,13 @@ knitr::include_graphics("images/GoogleSheets011.png")
 ```
 
 Aunque por alguna razón nos pueda parecer atractivo utilizar un diagrama tridimensional, es mejor evitarlo. En gráficos, se debe procurar ser algo minimalistas. Y listo, ya podemos presentar nuestros datos resumidos y reiterar que Coca-Cola es el refresco más preferido, al menos para nuestros encuestados.
+
+#### Gráfico circular en RStudio
+
+Partiremos de los datos ya cargados anteriormente sobre las preferencias en marcas de refrescos. Cargamos los datos, creamos la tabla de frecuencias absolutas y tomando esta como base, creamos el diagrama de sectores:
+
+```{r}
+frec <- table(refrescos$REFRESCOS.FAVORITOS)
+pie(frec, main = "Refrescos favoritos")
+```
+

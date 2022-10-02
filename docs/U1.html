@@ -563,6 +563,23 @@ siguiente:</p>
 ## 4           4     Coca Cola Light
 ## 5           5           Coca Cola
 ## 6           6           Coca Cola</code></pre>
+<p>Para poder crear la tabla de frecuencias, tecleamos la siguiente
+línea de código:</p>
+<pre class="r"><code>frec &lt;- table(refrescos$REFRESCOS.FAVORITOS)</code></pre>
+<p>Y para poder mostrarla en pantalla:</p>
+<pre class="r"><code>frec</code></pre>
+<pre><code>## 
+##       Coca Cola Coca Cola Light           Fanta           Pepsi          Sprite 
+##              18               8               5              13               6</code></pre>
+<p>Para obtener la frecuencia relativa, partiremos de la absoluta, para
+lo cual ejecutamos lo siguiente:</p>
+<pre class="r"><code>frecrel &lt;- prop.table(frec)
+frecrel</code></pre>
+<pre><code>## 
+##       Coca Cola Coca Cola Light           Fanta           Pepsi          Sprite 
+##            0.36            0.16            0.10            0.26            0.12</code></pre>
+<p>Podemos reconocer que la Coca Cola es el refresco más preferido por
+nuestros encuestados, acumulando el 36% de los mismos.</p>
 </div>
 </div>
 <div id="resumen-gráfico-nominal" class="section level3">
@@ -574,8 +591,8 @@ debe utilizarse para datos numéricos, debido al inconveniente de la mala
 percepción humana ante proporciones circulares.</p>
 <div id="gráfico-circular-en-google-sheets" class="section level4">
 <h4>Gráfico circular en Google Sheets</h4>
-<p>Procedamos a construir un diagrama circular utilizando primero
-<em>Google Sheets</em>. Partamos de los <a
+<p>Procedamos a construir un diagrama circular utilizando <em>Google
+Sheets</em>. Partamos de los <a
 href="https://docs.google.com/spreadsheets/d/1aNo_5-bE7Y3T9lAc0wwYZi0rVYFjHm7DJyQRpmMA8JM/edit?usp=sharing">datos</a>
 de las marcas de refrescos que ya utilizamos en el apartado de la tabla
 de frecuencias. Recordemos que debemos crear una copia si ya contamos
@@ -597,6 +614,16 @@ diagrama tridimensional, es mejor evitarlo. En gráficos, se debe
 procurar ser algo minimalistas. Y listo, ya podemos presentar nuestros
 datos resumidos y reiterar que Coca-Cola es el refresco más preferido,
 al menos para nuestros encuestados.</p>
+</div>
+<div id="gráfico-circular-en-rstudio" class="section level4">
+<h4>Gráfico circular en RStudio</h4>
+<p>Partiremos de los datos ya cargados anteriormente sobre las
+preferencias en marcas de refrescos. Cargamos los datos, creamos la
+tabla de frecuencias absolutas y tomando esta como base, creamos el
+diagrama de sectores:</p>
+<pre class="r"><code>frec &lt;- table(refrescos$REFRESCOS.FAVORITOS)
+pie(frec, main = &quot;Refrescos favoritos&quot;)</code></pre>
+<p><img src="U1_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 </div>
 </div>
 </div>
