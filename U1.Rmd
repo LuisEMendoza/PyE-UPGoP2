@@ -5,7 +5,6 @@ output:
     toc: true
     toc_float: true
     toc_depth: 4
-    number_sections: true
 ---
 
 ## Introducción
@@ -112,5 +111,4 @@ De nuevo rechazamos la sugerencia y aplicamos el mismo procedimiento de arrastra
 ```{r, out.width='100%', fig.align='center', echo = FALSE}
 knitr::include_graphics("images/GoogleSheets009.png")
 ```
-
 
