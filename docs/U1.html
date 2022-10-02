@@ -395,8 +395,26 @@ div.tocify {
 </div>
 
 
-<div id="observaciones-y-variables" class="section level2">
-<h2>Observaciones y variables</h2>
+<div id="introducción" class="section level2" number="0.1">
+<h2><span class="header-section-number">0.1</span> Introducción</h2>
+<p>Dividiremos la Estadística en dos ramas por el momento. En primera
+instancia, es necesario recopilar, organizar, resumir y presentar los
+datos; de esto se encarga la <strong>Estadística Descriptiva</strong>.
+Por otro lado, se desea extender las propiedades de la muestra hacia la
+población, mediante inferencias que permitan comprender mejor su
+comportamiento e incluso pronosticarlo; esa es la función de la
+<strong>Estadística Inferencial</strong>. Trabajemos entonces con la
+primera, arrancando con la organización, resumen y presentación de los
+resultados. La parte de la recopilación la dejamos para otro apartado,
+por lo que partiremos de datos ya disponibles.</p>
+<p>Cabe mencionar que a lo largo de esta unidad se mostrarán dos maneras
+de abordar los ejercicios con alguna aplicación informática: tanto con
+hojas de cálculo (Google Sheets o LibreOffice Calc) como con RStudio.
+Cada peculiaridad de dichas aplicaciones se abordará en su momento.</p>
+</div>
+<div id="observaciones-y-variables" class="section level2" number="0.2">
+<h2><span class="header-section-number">0.2</span> Observaciones y
+variables</h2>
 <p>En Estadística manejamos el concepto de
 <strong>observaciones</strong> y <strong>variables</strong> como los
 valores que pueden tomar las características que estamos analizando. Por
@@ -416,8 +434,9 @@ el primero con el tercer lugar no es coherente). Por último, las
 variables numéricas son eso, números que pueden repetirse más o menos,
 pero que sí se pueden realizar operaciones matemáticas con ellos.</p>
 </div>
-<div id="resúmenes-estadísticos" class="section level2">
-<h2>Resúmenes estadísticos</h2>
+<div id="resúmenes-estadísticos" class="section level2" number="0.3">
+<h2><span class="header-section-number">0.3</span> Resúmenes
+estadísticos</h2>
 <p>Estudiaremos tres formas de resumir los datos: tabular, gráfica y
 numérica. La forma tabular consiste en ordenar y organizar los datos en
 forma de tabla, tomando como referencia las frecuencias de aparición de
@@ -426,12 +445,132 @@ partir de la tabla previamente elaborada y por último, el resumen
 numérico requiere que se hagan ciertos cálculos que incluyan todas las
 observaciones. Como cabe esperarse, la última solo se aplica a variables
 cuantitativas, por lo tanto, la dejaremos para el final.</p>
-<div id="resumen-tabular-nominal" class="section level3">
-<h3>Resumen tabular nominal</h3>
+<div id="resumen-tabular-nominal" class="section level3" number="0.3.1">
+<h3><span class="header-section-number">0.3.1</span> Resumen tabular
+nominal</h3>
 <p>Para mostrar cómo elaborar un resumen tabular comenzaremos trabajando
-con variables nominales (aplica lo mismo para ordinales). Tomemos el
-conjunto de datos que se encuentra en el siguiente <a
-href="https://docs.google.com/spreadsheets/d/1aNo_5-bE7Y3T9lAc0wwYZi0rVYFjHm7DJyQRpmMA8JM/edit?usp=sharing">enlace</a></p>
+con variables nominales (aplica lo mismo para ordinales). Este resumen
+le llamamos <strong>Tabla de frecuencias</strong> y consiste básicamente
+en organizar los datos enumerándolos sin que se repitan, luego contar
+cuántas veces se repite cada dato armando la frecuencia absoluta de
+dicho dato y a partir de la misma obtenemos la frecuencia relativa. Esta
+última se obtiene dividiendo la frecuencia absoluta correspondiente
+entre el número total de observaciones. Quizás se sienta esta
+explicación algo apresurada, pero se puede justificar diciendo que solo
+es necesario saber sobre qué hablamos, pues la manera de hacerlo le
+corresponde a las aplicaciones informáticas. Procedamos a ello.</p>
+<div id="tabla-de-frecuencias-con-hojas-de-cálculo"
+class="section level4" number="0.3.1.1">
+<h4><span class="header-section-number">0.3.1.1</span> Tabla de
+frecuencias con hojas de cálculo</h4>
+<p>Tomemos el conjunto de datos que se encuentra en la hoja de cálculo
+de <em>Google Sheets</em> accesible mediante el siguiente <a
+href="https://docs.google.com/spreadsheets/d/1aNo_5-bE7Y3T9lAc0wwYZi0rVYFjHm7DJyQRpmMA8JM/edit?usp=sharing">enlace</a>.
+Si se trabajará dentro de <em>Sheets</em> y se accede con una cuenta de
+<em>Gmail</em>, debe realizarse una copia del archivo debido a que se
+provee sin posibilidad de ser editado. Si se accede sin dicha cuenta o
+si se trabajará con <em>Calc</em> o <em>Excel</em>, debe descargarse el
+archivo en el formato adecuado: <em>ods</em> o <em>xlsx</em>,
+respectivamente.</p>
+<p>Contando con la cuenta de <em>gmail</em> y con la copia realizada,
+observemos un poco nuestros datos: son 50 observaciones ubicadas solo en
+la columna B, en el intervalo <em>B2:B51</em>. Son las marcas de
+refrescos escogidas como favoritas por 50 personas encuestadas.</p>
+<p><img src="images/GoogleSheets001.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>Toca ahora que procedamos con el conteo de cuántas veces se repite
+cada marca. Para ello, nos colocamos en la celda <em>D1</em> y creamos
+el encabezado de la columna <strong>CATEGORÍAS</strong>, bajamos a la
+celda <em>D2</em> y escribimos la siguiente fórmula:</p>
+<pre><code>=UNIQUE(B2:B51)</code></pre>
+<p><img src="images/GoogleSheets002.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>Al dar <em>Enter</em> nos devolverá los resultados en tantas celdas
+como sea necesario, siendo las categorías mostradas a continuación:</p>
+<div class="figure" style="text-align: center">
+<img src="images/GoogleSheets003.png" alt="logo" width="25%" />
+<p class="caption">
+logo
+</p>
+</div>
+<p>Crearemos los siguientes encabezados para tener listas todas las
+columnas de una tabla de frecuencias típica: <strong>Frecuencia
+Absoluta</strong>, <strong>Frecuencia Absoluta Acumulada</strong>,
+<strong>Frecuencia Relativa</strong> y <strong>Frecuencia Relativa
+Acumulada</strong>. Toca ahora contar las frecuencias, utilizando la
+fórmula de conteo condicional, la cual requiere dos argumentos: el
+intervalo, que consiste en los datos originales, ubicados en el
+intervalo <em>B2:B51</em>; y el criterio, el cual se corresponde con las
+categorías obtenidas con la fórmula anterior (<em>D2:D6</em>). Nos
+ubicamos en la celda <em>E2</em> y escribimos la fórmula</p>
+<pre><code>=CONTAR.SI(B2:B51,D2:D6)</code></pre>
+<div class="figure" style="text-align: center">
+<img src="images/GoogleSheets004.png" alt="logo" width="25%" />
+<p class="caption">
+logo
+</p>
+</div>
+<p><em>Sheets</em> nos sugerirá que le permitamos autocompletar la
+fórmula, aceptando el mensaje aparecido. Así tendremos ya nuestra
+frecuencia absoluta.</p>
+<div class="figure" style="text-align: center">
+<img src="images/GoogleSheets005.png" alt="logo" width="25%" />
+<p class="caption">
+logo
+</p>
+</div>
+<p>La frecuencia absoluta acumulada se calcula como sigue.</p>
+<ul>
+<li>En la celda <em>F2</em> copiamos el contenido de la celda
+<em>E2</em>.</li>
+<li>En la celda <em>F3</em> utilizamos la función</li>
+</ul>
+<pre><code>=F2+E3</code></pre>
+<p>En esta ocasión rechazamos la sugerencia de <em>Sheets</em> y
+obtendremos el acumulado de las primeras dos categorías: 26. El
+siguiente paso implica posar el cursor en el pequeño cuadrado que se
+encuentra en la parte inferior derecha de la celda, hasta que cambie a
+una cruz de brazos delgados. Cuando esto pase, toca dar clic en dicho
+cuadrado y sin soltarlo, arrastrar hasta la celda <em>F6</em>.</p>
+<div class="figure" style="text-align: center">
+<img src="images/GoogleSheets006.png" alt="logo" width="25%" />
+<p class="caption">
+logo
+</p>
+</div>
+<p>Pongamos atención en la celda <em>F6</em>. Nos indica la totalidad de
+observaciones (50 en este caso), el cual es un número que estaremos
+utilizando en lo subsecuente. Ubiquémonos ahora en la celda <em>G2</em>
+e introduzcamos la función</p>
+<pre><code>=E2/50</code></pre>
+<p>La frecuencia relativa es un porcentaje que calculamos dividiendo la
+frecuencia absoluta entre el número de observaciones. Aceptamos la
+sugerencia de <em>Sheets</em> y tendremos ya completa la columna.</p>
+<div class="figure" style="text-align: center">
+<img src="images/GoogleSheets007.png" alt="logo" width="25%" />
+<p class="caption">
+logo
+</p>
+</div>
+<p>Finalicemos la tabla colocándonos en la celda <em>H2</em> y copiando
+la frecuencia relativa correspondiente (0.36) ahí. Enseguida bajamos a
+la celda <em>H3</em> y escribimos la función</p>
+<pre><code>=H2+G3</code></pre>
+<div class="figure" style="text-align: center">
+<img src="images/GoogleSheets008.png" alt="logo" width="25%" />
+<p class="caption">
+logo
+</p>
+</div>
+<p>De nuevo rechazamos la sugerencia y aplicamos el mismo procedimiento
+de arrastrar la fórmula mediante el cuadrado inferior y obtendremos el
+acumulado total, que será de 1. Hemos terminado la <strong>tabla de
+frecuencias</strong>.</p>
+<div class="figure" style="text-align: center">
+<img src="images/GoogleSheets009.png" alt="logo" width="25%" />
+<p class="caption">
+logo
+</p>
+</div>
+</div>
 </div>
 </div>
 
@@ -484,7 +623,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1,h2,h3",
+      selectors: "h1,h2,h3,h4",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
