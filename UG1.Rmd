@@ -250,8 +250,7 @@ Esto nos dará un $151$ como resultado. Esta cantidad se corresponde con el lím
 Lo que hemos calculado es hasta donde debe llegar la primera clase, justo antes de tocar la segunda. Al ver que la segunda clase comienza en $151$, la primera debe llegar justo antes, es decir, hasta $150$. Arrastramos esta fórmula y obtenemos los límites superiores restantes.
 
 ```{r, out.width='50%', fig.align='center', echo = FALSE}
-knitr::include_graphics("images/GoogleSheets014.png")
-
+knitr::include_graphics("images/GoogleSheets015.png")
 ```
 
 
