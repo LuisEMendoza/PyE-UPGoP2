@@ -653,6 +653,123 @@ datos resumidos y reiterar que Coca-Cola es el refresco más preferido,
 al menos para nuestros encuestados.</p>
 </div>
 </div>
+<div id="resumen-tabular-numérico" class="section level3">
+<h3>Resumen tabular numérico</h3>
+<p>Cuando se desee obtener un resumen en forma de tabla para datos
+cuantitativos, se utiliza la distribución de frecuencias, la cual
+consiste de un cierto número de clases y rangos que las definen,
+llamados límites de clase. Nos remitimos a contar cuántas veces
+encontramos datos dentro de esos límites y es lo que colocaremos en las
+frecuencias. Comencemos con la construcción de una distribución de
+frecuencias en <strong>Sheets</strong>.</p>
+<div id="distribución-de-frecuencias" class="section level4">
+<h4>Distribución de frecuencias</h4>
+<p>Arranquemos con nuestro conjunto de datos, al cual podemos acceder
+desde este <a
+href="https://docs.google.com/spreadsheets/d/1w06TbOPyR4EG50ttYeLAFp_Hlh_QQD0xnGO9KhX27j0/edit?usp=sharing">enlace</a>.
+Recordemos que debemos hacer una copia del archivo para trabajar con él
+desde <strong>Sheets</strong> o descargarlo en el formato deseado.
+Nuestros datos consisten de dos columnas: el número de observaciones y
+las estaturas como tales.</p>
+<p><img src="images/GoogleSheets012.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>Agregaremos unas cuantas columnas a nuestro conjunto. La primera será
+<em>Total de observaciones</em>, seguimos con <em>Mínimo</em>,
+<em>Máximo</em> y al final <em>Número de clases</em>. El siguiente paso
+consistirá en calcular los valores correspondientes a estas columnas, es
+decir, cuántas observaciones incluye nuestro conjunto, cuáles son los
+números mínimo y máximo y de cuántas categorías o <em>clases</em>
+construiremos nuestra distribución. Lo haremos con la hoja de cálculo.
+Comencemos en la celda <em>C2</em> con la fórmula</p>
+<pre><code>=CONTAR(B2:B51)</code></pre>
+<p>Nos pasamos a la celda <em>D2</em> y escribimos</p>
+<pre><code>=MIN(B2:B51)</code></pre>
+<p>Ahora en la celda <em>E2</em></p>
+<pre><code>=MAX(B2:B51)</code></pre>
+<p>Así obtenemos casi toda la información necesaria para construir la
+distribución.</p>
+<p><img src="images/GoogleSheets013.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>Solo nos falta definir el <em>número de clases</em>. Existen varios
+criterios para hacerlo, entre ellos se encuentra la <strong>Regla de
+Sturges</strong>:</p>
+<p><span class="math display">\[
+k=1+log_2(n)
+\]</span> En esta fórmula matemática la <span
+class="math inline">\(n\)</span> es el número de datos. Si la
+introducimos en <em>Sheets</em> usando la celda <em>C2</em> (donde
+contamos cuántos valores tenía nuestro conjunto) y el <span
+class="math inline">\(2\)</span> como argumentos</p>
+<pre><code>=1+LOG(C2,2)</code></pre>
+<p>nos arroja como resultado <span
+class="math inline">\(6.6438\)</span>.</p>
+<p>Otro criterio es la <strong>Regla de Scott</strong></p>
+<p><span class="math display">\[
+k=(2n)^{1/3}
+\]</span></p>
+<p>la cual podemos introducir en <em>Sheets</em> de la siguiente manera
+(recordando que <span class="math inline">\(n\)</span> es el número de
+datos):</p>
+<pre><code>=(2*C2)^(1/3)</code></pre>
+<p>Dando como resultado <span class="math inline">\(4.6415\)</span>.</p>
+<p>Un último criterio es uno más sencillo. A partir del número de datos
+calculamos su raíz cuadrada y nos quedamos con ese resultado como el
+número de clases.</p>
+<p><span class="math display">\[
+k=\sqrt{n}
+\]</span> En la hoja de cálculo se obtiene mediante</p>
+<pre><code>=RAIZ(C2)</code></pre>
+<p>Obteniendo el resultado de <span
+class="math inline">\(7.0710\)</span>.</p>
+<p>Lo que debemos realizar ahora es decidir cuál número de clases
+seleccionar. Nos quedaremos en este caso con el resultado del primer
+criterio, es decir, con <span class="math inline">\(7\)</span>
+clases.</p>
+<p>El siguiente paso es definir el tamaño o anchura de la clase, la cual
+puede seleccionarse al tanteo o bien, siguiendo una fórmula matemática
+bastante sencilla:</p>
+<p><span class="math display">\[
+l=\frac{R}{k}
+\]</span></p>
+<p>Donde <span class="math inline">\(R\)</span> es el rango, o sea, la
+diferencia entre el número máximo y el número mínimo y <span
+class="math inline">\(k\)</span> es el número de clases seleccionado.
+Podemos calcularlo en nuestra hoja de cálculo, tal como sigue:</p>
+<pre><code>=(E2-D2)/7</code></pre>
+<p>Así, sabemos que la anchura de clase es tentativamente <span
+class="math inline">\(6\)</span>.</p>
+<p>Construyamos ahora la tabla que nos permitirá organizar nuestra
+distribución de frecuencias:</p>
+<p><img src="images/GoogleSheets014.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>Como podemos observar, ya comenzamos rellenando la columna
+<em>Clases</em>, enumerando desde <span class="math inline">\(1\)</span>
+hasta <span class="math inline">\(7\)</span>, correspondiendo esto con
+el número de clases. También cabe mencionar que ya se incluyó el número
+más bajo en la columna que hemos llamado <em>Inferior</em>. Como ya
+también sabemos, la anchura de clase se quedó en <span
+class="math inline">\(6\)</span>, por lo que comenzaremos a definir los
+límites de clase a partir de lo que ya conocemos. Nos colocaremos en la
+celda <em>H3</em> (justo debajo del <span
+class="math inline">\(145\)</span>) e introduciremos la fórmula</p>
+<pre><code>=H2+6</code></pre>
+<p>Esto nos dará un <span class="math inline">\(151\)</span> como
+resultado. Esta cantidad se corresponde con el límite inferior de la
+segunda clase, puesto que el límite inferior de la primera es <span
+class="math inline">\(145\)</span>. Como podemos notar, la anchura de
+clase se refiere a la distancia entre los límites inferiores de dos
+clases contiguas, y no a la anchura de la clase en sí. Si arrastramos
+esta fórmula hasta la séptima clase (la celda <em>H8</em>), obtendremos
+los límites inferiores restantes. Ahora toca obtener los límites
+superiores, lo cual se obtiene colocando el cursor en <em>I2</em> y
+escribiendo la fórmula</p>
+<pre><code>=H2+5</code></pre>
+<p>Lo que hemos calculado es hasta donde debe llegar la primera clase,
+justo antes de tocar la segunda. Al ver que la segunda clase comienza en
+<span class="math inline">\(151\)</span>, la primera debe llegar justo
+antes, es decir, hasta <span class="math inline">\(150\)</span>.
+Arrastramos esta fórmula y obtenemos los límites superiores
+restantes.</p>
+<p><img src="images/GoogleSheets014.png" width="50%" style="display: block; margin: auto;" /></p>
+</div>
+</div>
 </div>
 
 

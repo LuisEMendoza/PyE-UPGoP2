@@ -135,3 +135,124 @@ knitr::include_graphics("images/GoogleSheets011.png")
 ```
 
 Aunque por alguna razón nos pueda parecer atractivo utilizar un diagrama tridimensional, es mejor evitarlo. En gráficos, se debe procurar ser algo minimalistas. Y listo, ya podemos presentar nuestros datos resumidos y reiterar que Coca-Cola es el refresco más preferido, al menos para nuestros encuestados.
+
+### Resumen tabular numérico
+
+Cuando se desee obtener un resumen en forma de tabla para datos cuantitativos, se utiliza la distribución de frecuencias, la cual consiste de un cierto número de clases y rangos que las definen, llamados límites de clase. Nos remitimos a contar cuántas veces encontramos datos dentro de esos límites y es lo que colocaremos en las frecuencias. Comencemos con la construcción de una distribución de frecuencias en **Sheets**.
+
+#### Distribución de frecuencias
+
+Arranquemos con nuestro conjunto de datos, al cual podemos acceder desde este [enlace](https://docs.google.com/spreadsheets/d/1w06TbOPyR4EG50ttYeLAFp_Hlh_QQD0xnGO9KhX27j0/edit?usp=sharing). Recordemos que debemos hacer una copia del archivo para trabajar con él desde **Sheets** o descargarlo en el formato deseado. Nuestros datos consisten de dos columnas: el número de observaciones y las estaturas como tales. 
+
+```{r, out.width='50%', fig.align='center', echo = FALSE}
+knitr::include_graphics("images/GoogleSheets012.png")
+```
+
+Agregaremos unas cuantas columnas a nuestro conjunto. La primera será *Total de observaciones*, seguimos con *Mínimo*, *Máximo* y al final *Número de clases*. El siguiente paso consistirá en calcular los valores correspondientes a estas columnas, es decir, cuántas observaciones incluye nuestro conjunto, cuáles son los números mínimo y máximo y de cuántas categorías o *clases* construiremos nuestra distribución. Lo haremos con la hoja de cálculo. Comencemos en la celda *C2* con la fórmula
+
+```{}
+=CONTAR(B2:B51)
+```
+
+Nos pasamos a la celda *D2* y escribimos
+
+```{}
+=MIN(B2:B51)
+```
+
+Ahora en la celda *E2*
+
+```{}
+=MAX(B2:B51)
+```
+
+Así obtenemos casi toda la información necesaria para construir la distribución.
+
+```{r, out.width='50%', fig.align='center', echo = FALSE}
+knitr::include_graphics("images/GoogleSheets013.png")
+```
+
+
+Solo nos falta definir el *número de clases*. Existen varios criterios para hacerlo, entre ellos se encuentra la **Regla de Sturges**:
+
+$$
+k=1+log_2(n)
+$$
+En esta fórmula matemática la $n$ es el número de datos. Si la introducimos en *Sheets* usando la celda *C2* (donde contamos cuántos valores tenía nuestro conjunto) y el $2$ como argumentos
+
+```{}
+=1+LOG(C2,2)
+```
+
+nos arroja como resultado $6.6438$.
+
+Otro criterio es la **Regla de Scott**
+
+$$
+k=(2n)^{1/3}
+$$
+
+la cual podemos introducir en *Sheets* de la siguiente manera (recordando que $n$ es el número de datos):
+
+```{}
+=(2*C2)^(1/3)
+```
+
+Dando como resultado $4.6415$.
+
+Un último criterio es uno más sencillo. A partir del número de datos calculamos su raíz cuadrada y nos quedamos con ese resultado como el número de clases.
+
+$$
+k=\sqrt{n}
+$$
+En la hoja de cálculo se obtiene mediante
+
+```{}
+=RAIZ(C2)
+```
+
+Obteniendo el resultado de $7.0710$.
+
+Lo que debemos realizar ahora es decidir cuál número de clases seleccionar. Nos quedaremos en este caso con el resultado del primer criterio, es decir, con $7$ clases.
+
+El siguiente paso es definir el tamaño o anchura de la clase, la cual puede seleccionarse al tanteo o bien, siguiendo una fórmula matemática bastante sencilla:
+
+$$
+l=\frac{R}{k}
+$$
+
+Donde $R$ es el rango, o sea, la diferencia entre el número máximo y el número mínimo y $k$ es el número de clases seleccionado. Podemos calcularlo en nuestra hoja de cálculo, tal como sigue:
+
+```{}
+=(E2-D2)/7
+```
+
+Así, sabemos que la anchura de clase es tentativamente $6$. 
+
+Construyamos ahora la tabla que nos permitirá organizar nuestra distribución de frecuencias:
+
+```{r, out.width='50%', fig.align='center', echo = FALSE}
+knitr::include_graphics("images/GoogleSheets014.png")
+```
+
+Como podemos observar, ya comenzamos rellenando la columna *Clases*, enumerando desde $1$ hasta $7$, correspondiendo esto con el número de clases. También cabe mencionar que ya se incluyó el número más bajo en la columna que hemos llamado *Inferior*. Como ya también sabemos, la anchura de clase se quedó en $6$, por lo que comenzaremos a definir los límites de clase a partir de lo que ya conocemos. Nos colocaremos en la celda *H3* (justo debajo del $145$) e introduciremos la fórmula 
+
+```{}
+=H2+6
+```
+
+Esto nos dará un $151$ como resultado. Esta cantidad se corresponde con el límite inferior de la segunda clase, puesto que el límite inferior de la primera es $145$. Como podemos notar, la anchura de clase se refiere a la distancia entre los límites inferiores de dos clases contiguas, y no a la anchura de la clase en sí. Si arrastramos esta fórmula hasta la séptima clase (la celda *H8*), obtendremos los límites inferiores restantes. Ahora toca obtener los límites superiores, lo cual se obtiene colocando el cursor en *I2* y escribiendo la fórmula
+
+```{}
+=H2+5
+```
+
+Lo que hemos calculado es hasta donde debe llegar la primera clase, justo antes de tocar la segunda. Al ver que la segunda clase comienza en $151$, la primera debe llegar justo antes, es decir, hasta $150$. Arrastramos esta fórmula y obtenemos los límites superiores restantes.
+
+```{r, out.width='50%', fig.align='center', echo = FALSE}
+knitr::include_graphics("images/GoogleSheets014.png")
+
+```
+
+
+
