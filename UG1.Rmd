@@ -253,5 +253,26 @@ Lo que hemos calculado es hasta donde debe llegar la primera clase, justo antes 
 knitr::include_graphics("images/GoogleSheets015.png")
 ```
 
+Como podemos notar, el último límite superior ($186$) excluye al valor más alto ($187$). Por esta razón ampliaremos el número de clases a $8$, con límites inferior y superior de $187$ a $192$, respectivamente. El proceso de construir distribuciones de frecuencias es bastante flexible, por lo que podemos realizar este cambio sin problema alguno. 
 
+Para obtener la columna de la frecuencia absoluta, utilizaremos la fórmula *Frecuencia*. Pero para ello, debemos seleccionar las 8 celdas de la columna *J* que se encuentran al lado de los límites superiores y cuidando de no dar otro clic, comenzar a escribir la fórmula:
+
+```{r, out.width='50%', fig.align='center', echo = FALSE}
+knitr::include_graphics("images/GoogleSheets016.png")
+
+```
+
+Escribiremos
+
+```{}
+=FRECUENCIA(B2:B51,I2:I9)
+```
+
+Y damos *Enter* para obtener las frecuencias.
+
+```{r, out.width='50%', fig.align='center', echo = FALSE}
+knitr::include_graphics("images/GoogleSheets017.png")
+```
+
+El proceso para obtener las frecuencias restantes es exactamente el mismo que en la sección de la tabla de frecuencias.
 
