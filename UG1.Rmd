@@ -274,5 +274,5 @@ Y damos *Enter* para obtener las frecuencias.
 knitr::include_graphics("images/GoogleSheets017.png")
 ```
 
-El proceso para obtener las frecuencias restantes es exactamente el mismo que en la sección de la tabla de frecuencias.
+El proceso para obtener las frecuencias restantes es exactamente el mismo que en la sección de la [tabla de frecuencias](https://luisemendoza.github.io/PyE-UPGoP2/UG1.html#Resumen_tabular_nominal).
 
