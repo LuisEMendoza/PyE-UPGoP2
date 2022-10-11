@@ -11,7 +11,7 @@ output:
 
 Dividiremos la Estadística en dos ramas por el momento. En primera instancia, es necesario recopilar, organizar, resumir y presentar los datos; de esto se encarga la __Estadística Descriptiva__. Por otro lado, se desea extender las propiedades de la muestra hacia la población, mediante inferencias que permitan comprender mejor su comportamiento e incluso pronosticarlo; esa es la función de la __Estadística Inferencial__. Trabajemos entonces con la primera, arrancando con la organización, resumen y presentación de los resultados. La parte de la recopilación la dejamos para otro apartado, por lo que partiremos de datos ya disponibles. 
 
-Cabe mencionar que a lo largo de esta unidad (y en este sitio) se mostrará la manera de abordar problemas estadísticas utilizando las hojas de cálculo de Google, llamadas Sheets. Si se desea trabajar con LibreOffice Calc, se puede acceder [aquí](UC1.html). Si se desea abordar el contenido desde el enfoque de **R** o **RStudio**, el acceso está [aquí](UR1.html). Cada peculiaridad de dichas aplicaciones se abordará en su respectivo momento.
+Cabe mencionar que a lo largo de esta unidad (y en este sitio) se mostrará la manera de abordar problemas estadísticas utilizando las hojas de cálculo de Google, llamadas Sheets. Si se desea abordar el contenido desde el enfoque de **R** o **RStudio**, el acceso está [aquí](UR1.html). Cada peculiaridad de dichas aplicaciones se abordará en su respectivo momento.
 
 ## Observaciones y variables
 

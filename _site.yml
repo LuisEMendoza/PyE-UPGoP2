@@ -18,19 +18,6 @@ navbar:
         href: UG4.html
       - text: "Unidad 5"
         href: UG5.html
-  - text: "LibreOffice Calc"
-    menu:
-      - text: "Unidades"
-      - text: "Unidad 1"
-        href: UC1.html
-      - text: "Unidad 2"
-        href: UC2.html
-      - text: "Unidad 3"
-        href: UC3.html
-      - text: "Unidad 4"
-        href: UC4.html
-      - text: "Unidad 5"
-        href: UC5.html
   - text: "RStudio"
     menu:
       - text: "Unidades"
@@ -44,19 +31,6 @@ navbar:
         href: UR4.html
       - text: "Unidad 5"
         href: UR5.html
-  - text: "Microsoft Excel"
-    menu:
-      - text: "Unidades"
-      - text: "Unidad 1"
-        href: UE1.html
-      - text: "Unidad 2"
-        href: UE2.html
-      - text: "Unidad 3"
-        href: UE3.html
-      - text: "Unidad 4"
-        href: UE4.html
-      - text: "Unidad 5"
-        href: UE5.html
   - text: "Evidencias"
     menu:
       - text: "Unidades"
