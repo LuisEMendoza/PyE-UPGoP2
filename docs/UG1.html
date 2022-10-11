@@ -355,31 +355,6 @@ div.tocify {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    LibreOffice Calc
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li class="dropdown-header">Unidades</li>
-    <li>
-      <a href="UC1.html">Unidad 1</a>
-    </li>
-    <li>
-      <a href="UC2.html">Unidad 2</a>
-    </li>
-    <li>
-      <a href="UC3.html">Unidad 3</a>
-    </li>
-    <li>
-      <a href="UC4.html">Unidad 4</a>
-    </li>
-    <li>
-      <a href="UC5.html">Unidad 5</a>
-    </li>
-  </ul>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     RStudio
      
     <span class="caret"></span>
@@ -400,31 +375,6 @@ div.tocify {
     </li>
     <li>
       <a href="UR5.html">Unidad 5</a>
-    </li>
-  </ul>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Microsoft Excel
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li class="dropdown-header">Unidades</li>
-    <li>
-      <a href="UE1.html">Unidad 1</a>
-    </li>
-    <li>
-      <a href="UE2.html">Unidad 2</a>
-    </li>
-    <li>
-      <a href="UE3.html">Unidad 3</a>
-    </li>
-    <li>
-      <a href="UE4.html">Unidad 4</a>
-    </li>
-    <li>
-      <a href="UE5.html">Unidad 5</a>
     </li>
   </ul>
 </li>
@@ -484,9 +434,8 @@ resultados. La parte de la recopilación la dejamos para otro apartado,
 por lo que partiremos de datos ya disponibles.</p>
 <p>Cabe mencionar que a lo largo de esta unidad (y en este sitio) se
 mostrará la manera de abordar problemas estadísticas utilizando las
-hojas de cálculo de Google, llamadas Sheets. Si se desea trabajar con
-LibreOffice Calc, se puede acceder <a href="UC1.html">aquí</a>. Si se
-desea abordar el contenido desde el enfoque de <strong>R</strong> o
+hojas de cálculo de Google, llamadas Sheets. Si se desea abordar el
+contenido desde el enfoque de <strong>R</strong> o
 <strong>RStudio</strong>, el acceso está <a href="UR1.html">aquí</a>.
 Cada peculiaridad de dichas aplicaciones se abordará en su respectivo
 momento.</p>
@@ -768,6 +717,26 @@ antes, es decir, hasta <span class="math inline">\(150\)</span>.
 Arrastramos esta fórmula y obtenemos los límites superiores
 restantes.</p>
 <p><img src="images/GoogleSheets015.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>Como podemos notar, el último límite superior (<span
+class="math inline">\(186\)</span>) excluye al valor más alto (<span
+class="math inline">\(187\)</span>). Por esta razón ampliaremos el
+número de clases a <span class="math inline">\(8\)</span>, con límites
+inferior y superior de <span class="math inline">\(187\)</span> a <span
+class="math inline">\(192\)</span>, respectivamente. El proceso de
+construir distribuciones de frecuencias es bastante flexible, por lo que
+podemos realizar este cambio sin problema alguno.</p>
+<p>Para obtener la columna de la frecuencia absoluta, utilizaremos la
+fórmula <em>Frecuencia</em>. Pero para ello, debemos seleccionar las 8
+celdas de la columna <em>J</em> que se encuentran al lado de los límites
+superiores y cuidando de no dar otro clic, comenzar a escribir la
+fórmula:</p>
+<p><img src="images/GoogleSheets016.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>Escribiremos</p>
+<pre><code>=FRECUENCIA(B2:B51,I2:I9)</code></pre>
+<p>Y damos <em>Enter</em> para obtener las frecuencias.</p>
+<p><img src="images/GoogleSheets017.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>El proceso para obtener las frecuencias restantes es exactamente el
+mismo que en la sección de la tabla de frecuencias.</p>
 </div>
 </div>
 </div>
